@@ -1,6 +1,5 @@
 ﻿using System;
 using System.Collections.Generic;
-using Intelligens.Extras;
 
 namespace Intelligens.Optimization.GeneticAlgorithm
 {
