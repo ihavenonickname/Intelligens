@@ -10,7 +10,7 @@ namespace Intelligens.Tests.Optimization.GeneticAlgorithm
         public void Tournament_ShouldSelectTheBest()
         {
             // Arrange
-            var stubPrng = new FakeRandomFixedListGenerator(new [] { 1, 3, 5 });
+            var stubPrng = new FakeRandomListGenerator(new [] { 1, 3, 5 });
             var tournamentSelectionStrategy = new TournamentSelectionStrategy<int>(3, stubPrng);
             var population = new []
             {

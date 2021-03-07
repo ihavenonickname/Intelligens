@@ -10,7 +10,7 @@ namespace Intelligens.Tests.Optimization.GeneticAlgorithm
         public void Mutate_InRightExtreme_ShouldWork()
         {
             // Arrange
-            var stubPrng = new FakeRandomFixedListGenerator(new [] {3, 7, 7, 7, 7});
+            var stubPrng = new FakeRandomListGenerator(new [] {3, 7, 7, 7, 7});
             var scrambleStrategy = new ScrambleMutationStrategy<int>(stubPrng, 0.05);
             var chromossome = new [] {0, 1, 2, 3, 4, 5, 6, 7, 8, 9};
 
@@ -25,7 +25,7 @@ namespace Intelligens.Tests.Optimization.GeneticAlgorithm
         public void Mutate_InLeftExtreme_ShouldWork()
         {
             // Arrange
-            var stubPrng = new FakeRandomFixedListGenerator(new [] {3, 0, 0, 0, 0});
+            var stubPrng = new FakeRandomListGenerator(new [] {3, 0, 0, 0, 0});
             var scrambleStrategy = new ScrambleMutationStrategy<int>(stubPrng, 0.05);
             var chromossome = new [] {0, 1, 2, 3, 4, 5, 6, 7, 8, 9};
 

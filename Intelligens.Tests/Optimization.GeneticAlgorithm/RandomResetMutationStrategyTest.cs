@@ -18,7 +18,7 @@ namespace Intelligens.Tests.Optimization.GeneticAlgorithm
         public void Mutate_ShouldUpdateInplace()
         {
             // Arrange
-            var stubPrng = new FakeRandomFixedListGenerator(new [] {1});
+            var stubPrng = new FakeRandomListGenerator(new [] {1});
             var stubGeneCreation = new FakeGeneCreationStrategy();
             var mutationStrategy = new RandomResetMutationStrategy<int>(stubGeneCreation, stubPrng, 0);
             var chromossome = new [] { 0, 0, 0 };

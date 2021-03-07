@@ -3,20 +3,20 @@ using System.Collections.Generic;
 
 namespace Intelligens.Extras
 {
-    public class FakeRandomFixedListGenerator : IRandomGenerator
+    public class FakeRandomListGenerator : IRandomGenerator
     {
         private readonly IList<int> _integers;
         private readonly IList<double> _doubles;
         private int _idxIntegers;
         private int _idxDoubles;
 
-        public FakeRandomFixedListGenerator(IList<int> integers) : this(integers, null)
+        public FakeRandomListGenerator(IList<int> integers) : this(integers, null)
         { }
 
-        public FakeRandomFixedListGenerator(IList<double> doubles) : this(null, doubles)
+        public FakeRandomListGenerator(IList<double> doubles) : this(null, doubles)
         { }
 
-        public FakeRandomFixedListGenerator(IList<int> integers, IList<double> doubles)
+        public FakeRandomListGenerator(IList<int> integers, IList<double> doubles)
         {
             _integers = integers;
             _doubles = doubles;
