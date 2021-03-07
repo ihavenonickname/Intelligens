@@ -15,10 +15,10 @@ namespace Intelligens.Tests.Optimization.GeneticAlgorithm
         }
 
         [Fact]
-        public void Mutate_ShouldUpdateInplace()
+        public void Mutate_InLeftExtreme_ShouldWork()
         {
             // Arrange
-            var stubPrng = new FakeRandomListGenerator(new [] {1});
+            var stubPrng = new FakeRandomListGenerator(new [] {0});
             var stubGeneCreation = new FakeGeneCreationStrategy();
             var mutationStrategy = new RandomResetMutationStrategy<int>(stubGeneCreation, stubPrng, 0);
             var chromossome = new [] { 0, 0, 0 };
@@ -27,7 +27,23 @@ namespace Intelligens.Tests.Optimization.GeneticAlgorithm
             mutationStrategy.Mutate(chromossome);
 
             // Assert
-            Assert.Equal(42, chromossome[1]);
+            Assert.Equal(42, chromossome[0]);
+        }
+
+        [Fact]
+        public void Mutate_InRightExtreme_ShouldWork()
+        {
+            // Arrange
+            var stubPrng = new FakeRandomListGenerator(new [] {2});
+            var stubGeneCreation = new FakeGeneCreationStrategy();
+            var mutationStrategy = new RandomResetMutationStrategy<int>(stubGeneCreation, stubPrng, 0);
+            var chromossome = new [] { 0, 0, 0 };
+
+            // Act
+            mutationStrategy.Mutate(chromossome);
+
+            // Assert
+            Assert.Equal(42, chromossome[2]);
         }
 
         [Fact]
