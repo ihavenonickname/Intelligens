@@ -48,7 +48,7 @@ namespace Intelligens.Tests.Optimization.GeneticAlgorithm
             const int CHROMOSOME_SIZE = 8;
             const double MUTATION_RATE = 0.05;
 
-            var defaultRandom = new DefaultPseudorandomGenerator();
+            var defaultRandom = new DefaultRandomGenerator();
             var geneCreationStrategy = new MockGeneCreationStrategy();
             var fitnessEvaluationStrategy = new MockFitnessEvaluationStrategy();
             var selectionStrategy = new TournamentSelectionStrategy<double>(50, defaultRandom);

@@ -2,7 +2,7 @@ using System;
 
 namespace Intelligens.Extras
 {
-    public class DefaultPseudorandomGenerator : IRandomGenerator
+    public class DefaultRandomGenerator : IRandomGenerator
     {
         private readonly Random _random = new Random();
 
