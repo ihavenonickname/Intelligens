@@ -39,6 +39,11 @@ namespace Intelligens.Extras
 
             var n = _integers[_idxIntegers];
 
+            if (n < min || n >= max)
+            {
+                throw new Exception("Provided value is invalid");
+            }
+
             _idxIntegers += 1;
 
             return n;
@@ -46,7 +51,7 @@ namespace Intelligens.Extras
 
         public int Next(int max)
         {
-            return Next(0, 0);
+            return Next(0, max);
         }
 
         public double Next()

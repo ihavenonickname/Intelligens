@@ -22,11 +22,11 @@ namespace Intelligens.Optimization.GeneticAlgorithm
         public void Mutate(IList<T> chromosome)
         {
             var size = _prng.Next(2, chromosome.Count);
-            var start = _prng.Next(0, chromosome.Count - size);
+            var start = _prng.Next(0, chromosome.Count - size + 1);
 
             for (var i = start + size - 1; i >= start; i -= 1)
             {
-                var j = _prng.Next(start, i);
+                var j = _prng.Next(start, i + 1);
                 var temp = chromosome[i];
                 chromosome[i] = chromosome[j];
                 chromosome[j] = temp;
