@@ -5,6 +5,6 @@ namespace Intelligens.Optimization.GeneticAlgorithm
 {
     public interface ISelectionStrategy<T>
     {
-        Tuple<IList<T>, IList<T>> Select(IList<IList<T>> population);
+        Tuple<IList<T>, IList<T>> Select(IList<IList<T>> population, IList<double> fitness);
     }
 }

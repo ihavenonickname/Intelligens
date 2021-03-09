@@ -61,7 +61,7 @@ namespace Intelligens.Optimization.GeneticAlgorithm
 
                 for (var i = 0; i < populationSize; i += 1)
                 {
-                    var selectionResult = _selectionStrategy.Select(population);
+                    var selectionResult = _selectionStrategy.Select(population, fitting);
                     var offspring = _crossoverStrategy.Crossover(selectionResult.Item1, selectionResult.Item2);
 
                     if (_mutationStrategy.ShouldMutate())

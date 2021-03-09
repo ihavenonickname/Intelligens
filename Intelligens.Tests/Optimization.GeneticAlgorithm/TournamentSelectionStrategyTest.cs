@@ -24,7 +24,7 @@ namespace Intelligens.Tests.Optimization.GeneticAlgorithm
             };
 
             // Act
-            var parents = tournamentSelectionStrategy.Select(population);
+            var parents = tournamentSelectionStrategy.Select(population, null);
 
             // Assert
             Assert.Equal(parents.Item1, population[1]);

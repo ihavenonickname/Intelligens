@@ -16,7 +16,7 @@ namespace Intelligens.Optimization.GeneticAlgorithm
             _prng = prng;
         }
 
-        public Tuple<IList<T>, IList<T>> Select(IList<IList<T>> population)
+        public Tuple<IList<T>, IList<T>> Select(IList<IList<T>> population, IList<double> fitness)
         {
             var pool = new HashSet<int>();
 
