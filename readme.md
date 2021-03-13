@@ -19,12 +19,12 @@ I'm not a Swede nor I have anything to do with them, I just thought it would mak
 The following algorithms are already implemented and tested:
 
 * Genetic algorithm
+* Simplex algorithm
 
 ## About the future
 
 The following algorithms will be implement in the near future:
 
-* Simplex method
 * Least squares
 * Multinomial naive bayes network
 * Gaussian naive bayes network
