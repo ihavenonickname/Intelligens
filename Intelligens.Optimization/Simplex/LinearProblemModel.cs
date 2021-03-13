@@ -7,6 +7,7 @@ namespace Intelligens.Optimization.Simplex
     {
         public IList<double> ObjectiveFunc { get; private set; }
         public IList<Constraint> Constraints { get; private set; }
+
         public int CountVars
         {
             get

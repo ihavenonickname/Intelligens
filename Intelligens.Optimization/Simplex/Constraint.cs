@@ -13,5 +13,4 @@ namespace Intelligens.Optimization.Simplex
             RightHandSide = rhs;
         }
     }
-
 }
