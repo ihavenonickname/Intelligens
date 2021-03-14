@@ -10,6 +10,7 @@ I'm not a Swede nor I have anything to do with them, I just thought it would mak
 
 ## About the structure
 
+* `Intelligens.Classification`: Algorithms related to classification problems.
 * `Intelligens.Optimization`: Algorithms related to optimization problems.
 * `Intelligens.Tests`: Unit tests for all algorithms.
 * `Intelligens.Extras`: Helpers and things of the sort.
