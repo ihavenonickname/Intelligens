@@ -114,7 +114,7 @@ namespace Intelligens.Optimization.Simplex
             }
         }
 
-        public LinearProblemSolution ExtractSolution(double[,] tableau, int countVars)
+        private LinearProblemSolution ExtractSolution(double[,] tableau, int countVars)
         {
             var lastRowIdx = tableau.GetLength(0) - 1;
             var lastColIdx = tableau.GetLength(1) - 1;
