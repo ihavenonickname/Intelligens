@@ -6,19 +6,7 @@ namespace Intelligens.Classification.KNearestNeighbors
 {
     public class KnnAlgorithm
     {
-        private double Distance(IList<double> coords1, IList<double> coords2)
-        {
-            var acc = 0.0;
-
-            for (var i = 0; i < coords1.Count; i += 1)
-            {
-                acc += Math.Pow(coords1[i] - coords2[i], 2);
-            }
-
-            return Math.Sqrt(acc);
-        }
-
-        public T Classify<T>(ICollection<KnnDatasetItem<T>> dataset, int k, IList<double> coords)
+        public T Classify<T>(ICollection<KnnDatasetItem<T>> dataset, int k, IReadOnlyList<double> coords)
         {
             if (k > dataset.Count)
             {
@@ -34,7 +22,8 @@ namespace Intelligens.Classification.KNearestNeighbors
 
             foreach (var item in dataset)
             {
-                var d = Distance(item.Coordinates, coords);
+                var d = MoreMath.EuclideanDistance(item.Coordinates, coords);
+
                 queue.Add(item.Class, d * -1);
             }
 
