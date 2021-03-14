@@ -9,7 +9,7 @@ namespace Intelligens.Extras
         private readonly List<T> _items;
         private readonly List<U> _priorities;
 
-        public IList<T> Items
+        public IReadOnlyList<T> Items
         {
             get
             {

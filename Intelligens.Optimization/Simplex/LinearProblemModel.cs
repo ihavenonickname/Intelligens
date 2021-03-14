@@ -5,8 +5,8 @@ namespace Intelligens.Optimization.Simplex
 {
     public class LinearProblemModel
     {
-        public IList<double> ObjectiveFunc { get; private set; }
-        public IList<Constraint> Constraints { get; private set; }
+        public IReadOnlyList<double> ObjectiveFunc { get; private set; }
+        public IReadOnlyList<Constraint> Constraints { get; private set; }
 
         public int CountVars
         {
@@ -16,7 +16,7 @@ namespace Intelligens.Optimization.Simplex
             }
         }
 
-        public LinearProblemModel(IList<double> multipliers, IList<Constraint> constraints)
+        public LinearProblemModel(IReadOnlyList<double> multipliers, IReadOnlyList<Constraint> constraints)
         {
             foreach (var constraint in constraints)
             {

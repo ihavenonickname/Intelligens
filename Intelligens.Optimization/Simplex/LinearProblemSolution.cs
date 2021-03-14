@@ -6,9 +6,9 @@ namespace Intelligens.Optimization.Simplex
     {
         public bool IsValid { get; private set; }
         public double Optimum { get; private set; }
-        public IList<double> Variables { get; private set; }
+        public IReadOnlyList<double> Variables { get; private set; }
 
-        public LinearProblemSolution(IList<double> variables, double optimum)
+        public LinearProblemSolution(IReadOnlyList<double> variables, double optimum)
         {
             Variables = variables;
             Optimum = optimum;
