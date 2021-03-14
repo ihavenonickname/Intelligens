@@ -20,7 +20,12 @@ namespace Intelligens.Classification.KNearestNeighbors
 
         public T Classify<T>(ICollection<KnnDatasetItem<T>> dataset, int k, IList<double> coords)
         {
-            if (dataset.Count < k)
+            if (k > dataset.Count)
+            {
+                throw new ArgumentException(nameof(k));
+            }
+
+            if (k < 1)
             {
                 throw new ArgumentException(nameof(k));
             }

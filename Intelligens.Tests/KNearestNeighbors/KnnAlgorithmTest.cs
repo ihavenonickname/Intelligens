@@ -1,3 +1,4 @@
+using System;
 using Intelligens.Classification.KNearestNeighbors;
 using Xunit;
 
@@ -6,7 +7,7 @@ namespace Intelligens.Test.KNearestNeighbors
     public class KnnAlgorithmTest
     {
         [Fact]
-        public void f()
+        public void Classify_ShouldWork_WithValidDataset()
         {
             // Arrange
             var knn = new KnnAlgorithm();
@@ -32,7 +33,7 @@ namespace Intelligens.Test.KNearestNeighbors
         }
 
         [Fact]
-        public void g()
+        public void Classify_ShouldWork_WithValidDataset2()
         {
             // Arrange
             var knn = new KnnAlgorithm();
@@ -55,6 +56,38 @@ namespace Intelligens.Test.KNearestNeighbors
 
             // Assert
             Assert.Equal(expected, actual);
+        }
+
+        [Fact]
+        public void Classify_ShouldFail_WhenKIsTooLarge()
+        {
+            // Arrange
+            var knn = new KnnAlgorithm();
+            var dataset = new KnnDatasetItem<string>[] { };
+            var coords = new double[] { };
+            var k = 1;
+
+            // Act
+            Action f = () => knn.Classify(dataset, k, coords);
+
+            // Assert
+            Assert.Throws<ArgumentException>(f);
+        }
+
+        [Fact]
+        public void Classify_ShouldFail_WhenKIsTooSmall()
+        {
+            // Arrange
+            var knn = new KnnAlgorithm();
+            var dataset = new KnnDatasetItem<string>[] { null, null, null };
+            var coords = new double[] { };
+            var k = 0;
+
+            // Act
+            Action f = () => knn.Classify(dataset, k, coords);
+
+            // Assert
+            Assert.Throws<ArgumentException>(f);
         }
     }
 }
