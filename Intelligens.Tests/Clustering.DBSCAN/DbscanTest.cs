@@ -4,6 +4,7 @@ using System.Linq;
 using Intelligens.Clustering.DBSCAN;
 using Intelligens.Extras;
 using Xunit;
+using Xunit.Abstractions;
 
 namespace Intelligens.Tests.Clustering.DBSCAN
 {
@@ -24,8 +25,15 @@ namespace Intelligens.Tests.Clustering.DBSCAN
             }
         }
 
+        private readonly ITestOutputHelper _testOutputHelper;
+
+        public DbscanTest(ITestOutputHelper testOutputHelper)
+        {
+            _testOutputHelper = testOutputHelper;
+        }
+
         [Fact]
-        public void f()
+        public void FindClusters_ShouldWork_WithNoisyDataset()
         {
             // Arrange
             var dataset = new double[][]
@@ -60,7 +68,7 @@ namespace Intelligens.Tests.Clustering.DBSCAN
         }
 
         [Fact]
-        public void g()
+        public void FindCluster_ShouldWork_WithUnorderedDataset()
         {
             // Arrange
             var rnd = new Random();

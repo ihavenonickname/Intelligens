@@ -17,6 +17,7 @@ namespace Intelligens.Clustering.DBSCAN
             _distance = distance;
         }
 
+        // TODO Allow this to be injected
         private List<int> RangeQuery(int i, double eps)
         {
             var neighbors = new List<int>();
