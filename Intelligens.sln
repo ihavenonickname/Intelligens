@@ -9,6 +9,8 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Intelligens.Tests", "Intell
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Intelligens.Classification", "Intelligens.Classification\Intelligens.Classification.csproj", "{D5813BD9-E233-4425-BDF6-9071A67E7D36}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Intelligens.Clustering", "Intelligens.Clustering\Intelligens.Clustering.csproj", "{68DC692C-626B-41BF-94F0-CAFF3645ABFF}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -58,5 +60,17 @@ Global
 		{D5813BD9-E233-4425-BDF6-9071A67E7D36}.Release|x64.Build.0 = Release|Any CPU
 		{D5813BD9-E233-4425-BDF6-9071A67E7D36}.Release|x86.ActiveCfg = Release|Any CPU
 		{D5813BD9-E233-4425-BDF6-9071A67E7D36}.Release|x86.Build.0 = Release|Any CPU
+		{68DC692C-626B-41BF-94F0-CAFF3645ABFF}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{68DC692C-626B-41BF-94F0-CAFF3645ABFF}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{68DC692C-626B-41BF-94F0-CAFF3645ABFF}.Debug|x64.ActiveCfg = Debug|Any CPU
+		{68DC692C-626B-41BF-94F0-CAFF3645ABFF}.Debug|x64.Build.0 = Debug|Any CPU
+		{68DC692C-626B-41BF-94F0-CAFF3645ABFF}.Debug|x86.ActiveCfg = Debug|Any CPU
+		{68DC692C-626B-41BF-94F0-CAFF3645ABFF}.Debug|x86.Build.0 = Debug|Any CPU
+		{68DC692C-626B-41BF-94F0-CAFF3645ABFF}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{68DC692C-626B-41BF-94F0-CAFF3645ABFF}.Release|Any CPU.Build.0 = Release|Any CPU
+		{68DC692C-626B-41BF-94F0-CAFF3645ABFF}.Release|x64.ActiveCfg = Release|Any CPU
+		{68DC692C-626B-41BF-94F0-CAFF3645ABFF}.Release|x64.Build.0 = Release|Any CPU
+		{68DC692C-626B-41BF-94F0-CAFF3645ABFF}.Release|x86.ActiveCfg = Release|Any CPU
+		{68DC692C-626B-41BF-94F0-CAFF3645ABFF}.Release|x86.Build.0 = Release|Any CPU
 	EndGlobalSection
 EndGlobal

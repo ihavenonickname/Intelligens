@@ -17,6 +17,7 @@
     <ProjectReference Include="..\Intelligens.Optimization\Intelligens.Optimization.csproj" />
     <ProjectReference Include="..\Intelligens.Extras\Intelligens.Extras.csproj" />
     <ProjectReference Include="..\Intelligens.Classification\Intelligens.Classification.csproj" />
+    <ProjectReference Include="..\Intelligens.Clustering\Intelligens.Clustering.csproj" />
   </ItemGroup>
 
 </Project>

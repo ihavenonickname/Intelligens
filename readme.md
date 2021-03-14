@@ -11,6 +11,7 @@ I'm not a Swede nor I have anything to do with them, I just thought it would mak
 ## About the structure
 
 * `Intelligens.Classification`: Algorithms related to classification problems.
+* `Intelligens.Clustering`: Algorithms related to clustering problems.
 * `Intelligens.Optimization`: Algorithms related to optimization problems.
 * `Intelligens.Tests`: Unit tests for all algorithms.
 * `Intelligens.Extras`: Helpers and things of the sort.
@@ -27,6 +28,7 @@ The following algorithms are already implemented and tested:
 
 The following algorithms will be implemented in the near future:
 
+* Density-based spatial clustering application with noise
 * Least squares
 * Multinomial naive bayes network
 * Gaussian naive bayes network
