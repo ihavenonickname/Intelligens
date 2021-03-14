@@ -2,7 +2,7 @@ using System;
 using Intelligens.Classification.KNearestNeighbors;
 using Xunit;
 
-namespace Intelligens.Test.KNearestNeighbors
+namespace Intelligens.Tests.KNearestNeighbors
 {
     public class KnnAlgorithmTest
     {

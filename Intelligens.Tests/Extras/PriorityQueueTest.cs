@@ -1,7 +1,7 @@
 using Intelligens.Extras;
 using Xunit;
 
-namespace Intelligens.Test.Extras
+namespace Intelligens.Tests.Extras
 {
     public class PriorityQueueTest
     {
