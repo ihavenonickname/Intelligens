@@ -20,6 +20,7 @@ The following algorithms are already implemented and tested:
 
 * Genetic algorithm
 * Simplex algorithm
+* K-Nearest neighbors
 
 ## About the future
 

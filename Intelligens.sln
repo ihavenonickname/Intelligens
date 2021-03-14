@@ -7,6 +7,8 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Intelligens.Optimization", 
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Intelligens.Tests", "Intelligens.Tests\Intelligens.Tests.csproj", "{D7DFA54C-32A9-4982-A12A-D17E4D9DEC44}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Intelligens.Classification", "Intelligens.Classification\Intelligens.Classification.csproj", "{D5813BD9-E233-4425-BDF6-9071A67E7D36}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -44,5 +46,17 @@ Global
 		{D7DFA54C-32A9-4982-A12A-D17E4D9DEC44}.Release|x64.Build.0 = Release|Any CPU
 		{D7DFA54C-32A9-4982-A12A-D17E4D9DEC44}.Release|x86.ActiveCfg = Release|Any CPU
 		{D7DFA54C-32A9-4982-A12A-D17E4D9DEC44}.Release|x86.Build.0 = Release|Any CPU
+		{D5813BD9-E233-4425-BDF6-9071A67E7D36}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{D5813BD9-E233-4425-BDF6-9071A67E7D36}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{D5813BD9-E233-4425-BDF6-9071A67E7D36}.Debug|x64.ActiveCfg = Debug|Any CPU
+		{D5813BD9-E233-4425-BDF6-9071A67E7D36}.Debug|x64.Build.0 = Debug|Any CPU
+		{D5813BD9-E233-4425-BDF6-9071A67E7D36}.Debug|x86.ActiveCfg = Debug|Any CPU
+		{D5813BD9-E233-4425-BDF6-9071A67E7D36}.Debug|x86.Build.0 = Debug|Any CPU
+		{D5813BD9-E233-4425-BDF6-9071A67E7D36}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{D5813BD9-E233-4425-BDF6-9071A67E7D36}.Release|Any CPU.Build.0 = Release|Any CPU
+		{D5813BD9-E233-4425-BDF6-9071A67E7D36}.Release|x64.ActiveCfg = Release|Any CPU
+		{D5813BD9-E233-4425-BDF6-9071A67E7D36}.Release|x64.Build.0 = Release|Any CPU
+		{D5813BD9-E233-4425-BDF6-9071A67E7D36}.Release|x86.ActiveCfg = Release|Any CPU
+		{D5813BD9-E233-4425-BDF6-9071A67E7D36}.Release|x86.Build.0 = Release|Any CPU
 	EndGlobalSection
 EndGlobal
