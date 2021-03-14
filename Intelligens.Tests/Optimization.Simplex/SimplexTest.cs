@@ -19,12 +19,12 @@ namespace Intelligens.Tests.Optimization.Simplex
                 new Constraint(new double[] {2,  1, -1}, 10),
             });
 
-            var expected = new[]
+            var expected = new double[,]
             {
-                new double[] { 4, -3,  1, 1, 0, 0, 0,  3},
-                new double[] { 1,  1,  1, 0, 1, 0, 0, 10},
-                new double[] { 2,  1, -1, 0, 0, 1, 0, 10},
-                new double[] {-2,  3, -4, 0, 0, 0, 1,  0},
+                { 4, -3,  1, 1, 0, 0, 0,  3},
+                { 1,  1,  1, 0, 1, 0, 0, 10},
+                { 2,  1, -1, 0, 0, 1, 0, 10},
+                {-2,  3, -4, 0, 0, 0, 1,  0},
             };
 
             // Act
@@ -40,12 +40,12 @@ namespace Intelligens.Tests.Optimization.Simplex
             // Arrange
             var simplex = new SimplexSolver();
 
-            var tableau = new[]
+            var tableau = new double[,]
             {
-                new double[] { 4, -3,  1, 1, 0, 0, 0,  3},
-                new double[] { 1,  1,  1, 0, 1, 0, 0, 10},
-                new double[] { 2,  1, -1, 0, 0, 1, 0, 10},
-                new double[] {-2,  3, -4, 0, 0, 0, 1,  0},
+                { 4, -3,  1, 1, 0, 0, 0,  3},
+                { 1,  1,  1, 0, 1, 0, 0, 10},
+                { 2,  1, -1, 0, 0, 1, 0, 10},
+                {-2,  3, -4, 0, 0, 0, 1,  0},
             };
 
             var expected = 2;
@@ -63,12 +63,12 @@ namespace Intelligens.Tests.Optimization.Simplex
             // Arrange
             var simplex = new SimplexSolver();
 
-            var tableau = new[]
+            var tableau = new double[,]
             {
-                new double[] {4, -3,  1, 1, 0, 0, 0,  3},
-                new double[] {1,  1,  1, 0, 1, 0, 0, 10},
-                new double[] {2,  1, -1, 0, 0, 1, 0, 10},
-                new double[] {0,  3,  4, 0, 0, 0, 1,  0},
+                {4, -3,  1, 1, 0, 0, 0,  3},
+                {1,  1,  1, 0, 1, 0, 0, 10},
+                {2,  1, -1, 0, 0, 1, 0, 10},
+                {0,  3,  4, 0, 0, 0, 1,  0},
             };
 
             int? expected = null;
@@ -86,12 +86,12 @@ namespace Intelligens.Tests.Optimization.Simplex
             // Arrange
             var simplex = new SimplexSolver();
 
-            var tableau = new[]
+            var tableau = new double[,]
             {
-                new double[] {0, -3, 1,   1,  3, 0, 0,  3},
-                new double[] {4,  1, 0,   0,  1, 0, 0, 10},
-                new double[] {0,  1, 0, -10,  0, 2, 0, 10},
-                new double[] {0,  3, 0,   0, -4, 0, 5, 15}
+                {0, -3, 1,   1,  3, 0, 0,  3},
+                {4,  1, 0,   0,  1, 0, 0, 10},
+                {0,  1, 0, -10,  0, 2, 0, 10},
+                {0,  3, 0,   0, -4, 0, 5, 15}
             };
 
             var pivotColIdx = (int)simplex.FindPivotColumn(tableau);
@@ -111,11 +111,11 @@ namespace Intelligens.Tests.Optimization.Simplex
             // Arrange
             var simplex = new SimplexSolver();
 
-            var tableau = new[]
+            var tableau = new double[,]
             {
-                new double[] {  0,  0, 5,  2,  0, 0,   4},
-                new double[] { -8, 20, 0,  6,  5, 0,  72},
-                new double[] {-20,  0, 0, 26, 15, 4, 232},
+                {  0,  0, 5,  2,  0, 0,   4},
+                { -8, 20, 0,  6,  5, 0,  72},
+                {-20,  0, 0, 26, 15, 4, 232},
             };
 
             var pivotColIdx = (int)simplex.FindPivotColumn(tableau);
@@ -135,30 +135,30 @@ namespace Intelligens.Tests.Optimization.Simplex
             // Arrange
             var simplex = new SimplexSolver();
 
-            var tableau = new[]
+            var tableau = new double[,]
             {
-                new double[] {1, -6   , 0, 0,   4   , 1080},
-                new double[] {0,  0.66, 0, 1,  -0.34,   10},
-                new double[] {0,  0.34, 1, 0,   0.34,   90},
+                {1, -6   , 0, 0,   4   , 1080},
+                {0,  0.66, 0, 1,  -0.34,   10},
+                {0,  0.34, 1, 0,   0.34,   90},
             };
 
             var pivotRowIdx = 1;
             var pivotColIdx = 1;
 
-            var expected = new[]
+            var expected = new double[,]
             {
-                new double[] {1, 0, 0,  9.12,  0.88, 1170.9 },
-                new double[] {0, 1, 0,  1.52, -0.52,   15.15},
-                new double[] {0, 0, 1, -0.52,  0.52,   84.85},
+                {1, 0, 0,  9.12,  0.88, 1170.9 },
+                {0, 1, 0,  1.52, -0.52,   15.15},
+                {0, 0, 1, -0.52,  0.52,   84.85},
             };
 
             // Act
             simplex.RowOperations(tableau, pivotRowIdx, pivotColIdx);
 
             // Assert
-            Assert.Equal(expected[0][5], tableau[0][5], 1);
-            Assert.Equal(expected[1][5], tableau[1][5], 1);
-            Assert.Equal(expected[2][5], tableau[2][5], 1);
+            Assert.Equal(expected[0, 5], tableau[0, 5], 1);
+            Assert.Equal(expected[1, 5], tableau[1, 5], 1);
+            Assert.Equal(expected[2, 5], tableau[2, 5], 1);
         }
 
         [Fact]

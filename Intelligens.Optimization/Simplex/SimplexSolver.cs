@@ -4,66 +4,62 @@ namespace Intelligens.Optimization.Simplex
 {
     public class SimplexSolver
     {
-        public IList<IList<double>> BuildTableau(LinearProblemModel model)
+        public double[,] BuildTableau(LinearProblemModel model)
         {
-            var tableau = new double[model.Constraints.Count + 1][];
-
-            var totalColumns = model.Constraints.Count * 2 + 2;
+            var countRows = model.Constraints.Count + 1;
+            var countCols = model.Constraints.Count * 2 + 2;
+            var tableau = new double[countRows, countCols];
 
             for (var i = 0; i < model.Constraints.Count; i += 1)
             {
                 var constr = model.Constraints[i];
 
-                tableau[i] = new double[totalColumns];
-
                 for (var j = 0; j < model.CountVars; j += 1)
                 {
-                    tableau[i][j] = constr.Multipliers[j];
+                    tableau[i, j] = constr.Multipliers[j];
                 }
 
-                for (var j = model.CountVars; j < totalColumns; j += 1)
+                for (var j = model.CountVars; j < countCols; j += 1)
                 {
-                    tableau[i][j] = 0;
+                    tableau[i, j] = 0;
                 }
 
-                tableau[i][model.CountVars + i] = 1;
-                tableau[i][totalColumns - 1] = constr.RightHandSide;
+                tableau[i, model.CountVars + i] = 1;
+                tableau[i, countCols - 1] = constr.RightHandSide;
             }
 
-            var lastRow = tableau.Length - 1;
-
-            tableau[lastRow] = new double[totalColumns];
+            var lastRow = countRows - 1;
 
             for (var i = 0; i < model.CountVars; i += 1)
             {
-                tableau[lastRow][i] = model.ObjectiveFunc[i] * -1;
+                tableau[lastRow, i] = model.ObjectiveFunc[i] * -1;
             }
 
-            for (var i = model.CountVars; i < totalColumns; i += 1)
+            for (var i = model.CountVars; i < countCols; i += 1)
             {
-                tableau[lastRow][i] = 0;
+                tableau[lastRow, i] = 0;
             }
 
-            tableau[lastRow][totalColumns - 2] = 1;
+            tableau[lastRow, countCols - 2] = 1;
 
             return tableau;
         }
 
-        public int? FindPivotColumn(IList<IList<double>> tableau)
+        public int? FindPivotColumn(double[,] tableau)
         {
             var pivotColIdx = 0;
-            var lastRowIdx = tableau.Count - 1;
-            var lastColIdx = tableau[lastRowIdx].Count - 1;
+            var lastRowIdx = tableau.GetLength(0) - 1;
+            var lastColIdx = tableau.GetLength(1) - 1;
 
             for (var i = 1; i < lastColIdx; i += 1)
             {
-                if (tableau[lastRowIdx][i] < tableau[lastRowIdx][pivotColIdx])
+                if (tableau[lastRowIdx, i] < tableau[lastRowIdx, pivotColIdx])
                 {
                     pivotColIdx = i;
                 }
             }
 
-            if (tableau[lastRowIdx][pivotColIdx] >= 0)
+            if (tableau[lastRowIdx, pivotColIdx] >= 0)
             {
                 return null;
             }
@@ -71,17 +67,17 @@ namespace Intelligens.Optimization.Simplex
             return pivotColIdx;
         }
 
-        public int? FindPivotRow(IList<IList<double>> tableau, int pivotColIdx)
+        public int? FindPivotRow(double[,] tableau, int pivotColIdx)
         {
-            var lastColIdx = tableau[0].Count - 1;
+            var lastColIdx = tableau.GetLength(1) - 1;
             double? lesserRatio = null;
             int? lesserRatioIdx = null;
 
-            for (var i = 0; i < tableau.Count; i += 1)
+            for (var i = 0; i < tableau.GetLength(0); i += 1)
             {
-                if (tableau[i][pivotColIdx] > 0)
+                if (tableau[i, pivotColIdx] > 0)
                 {
-                    var x = tableau[i][lastColIdx] / tableau[i][pivotColIdx];
+                    var x = tableau[i, lastColIdx] / tableau[i, pivotColIdx];
 
                     if (lesserRatio == null || x < lesserRatio)
                     {
@@ -94,34 +90,34 @@ namespace Intelligens.Optimization.Simplex
             return lesserRatioIdx;
         }
 
-        public void RowOperations(IList<IList<double>> tableau, int pivotRowIdx, int pivotColIdx)
+        public void RowOperations(double[,] tableau, int pivotRowIdx, int pivotColIdx)
         {
-            var countCols = tableau[0].Count;
-            var pivot = tableau[pivotRowIdx][pivotColIdx];
+            var countCols = tableau.GetLength(1);
+            var pivot = tableau[pivotRowIdx, pivotColIdx];
 
             for (var i = 0; i < countCols; i += 1)
             {
-                tableau[pivotRowIdx][i] /= pivot;
+                tableau[pivotRowIdx, i] /= pivot;
             }
 
-            for (var i = 0; i < tableau.Count; i += 1)
+            for (var i = 0; i < tableau.GetLength(0); i += 1)
             {
                 if (i != pivotRowIdx)
                 {
-                    var multiplier = tableau[i][pivotColIdx] * -1;
+                    var multiplier = tableau[i, pivotColIdx] * -1;
 
                     for (var j = 0; j < countCols; j += 1)
                     {
-                        tableau[i][j] += tableau[pivotRowIdx][j] * multiplier;
+                        tableau[i, j] += tableau[pivotRowIdx, j] * multiplier;
                     }
                 }
             }
         }
 
-        public LinearProblemSolution ExtractSolution(IList<IList<double>> tableau, int countVars)
+        public LinearProblemSolution ExtractSolution(double[,] tableau, int countVars)
         {
-            var lastRowIdx = tableau.Count - 1;
-            var lastColIdx = tableau[0].Count - 1;
+            var lastRowIdx = tableau.GetLength(0) - 1;
+            var lastColIdx = tableau.GetLength(1) - 1;
 
             var variables = new double[countVars];
 
@@ -129,16 +125,16 @@ namespace Intelligens.Optimization.Simplex
             {
                 for (var rowIdx = 0; rowIdx <= lastRowIdx; rowIdx += 1)
                 {
-                    if (tableau[rowIdx][colIdx] != 0)
+                    if (tableau[rowIdx, colIdx] != 0)
                     {
-                        variables[colIdx] = tableau[rowIdx][lastColIdx];
+                        variables[colIdx] = tableau[rowIdx, lastColIdx];
 
                         break;
                     }
                 }
             }
 
-            var optimum = tableau[lastRowIdx][lastColIdx];
+            var optimum = tableau[lastRowIdx, lastColIdx];
 
             return new LinearProblemSolution(variables, optimum);
         }
