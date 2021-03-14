@@ -23,7 +23,7 @@ The following algorithms are already implemented and tested:
 
 ## About the future
 
-The following algorithms will be implement in the near future:
+The following algorithms will be implemented in the near future:
 
 * Least squares
 * Multinomial naive bayes network
