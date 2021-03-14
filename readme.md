@@ -23,12 +23,12 @@ The following algorithms are already implemented and tested:
 * Genetic algorithm
 * Simplex algorithm
 * K-Nearest neighbors
+* Density-based spatial clustering application with noise
 
 ## About the future
 
 The following algorithms will be implemented in the near future:
 
-* Density-based spatial clustering application with noise
 * Least squares
 * Multinomial naive bayes network
 * Gaussian naive bayes network
