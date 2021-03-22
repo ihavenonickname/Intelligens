@@ -24,11 +24,11 @@ The following algorithms are already implemented and tested:
 * Simplex algorithm
 * K-Nearest neighbors
 * Density-based spatial clustering application with noise
+* Least squares
 
 ## About the future
 
 The following algorithms will be implemented in the near future:
 
-* Least squares
 * Multinomial naive bayes network
 * Gaussian naive bayes network
