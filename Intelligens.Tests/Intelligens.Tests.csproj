@@ -18,6 +18,7 @@
     <ProjectReference Include="..\Intelligens.Extras\Intelligens.Extras.csproj" />
     <ProjectReference Include="..\Intelligens.Classification\Intelligens.Classification.csproj" />
     <ProjectReference Include="..\Intelligens.Clustering\Intelligens.Clustering.csproj" />
+    <ProjectReference Include="..\Intelligens.Regression\Intelligens.Regression.csproj" />
   </ItemGroup>
 
 </Project>
