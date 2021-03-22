@@ -27,7 +27,7 @@ namespace Intelligens.Regression
 
             var A = new[,]
             {
-                { n,    xSum   },
+                { n, xSum },
                 { xSum, xSqSum },
             };
 
@@ -37,9 +37,11 @@ namespace Intelligens.Regression
                 xySum,
             };
 
-            // var answer = MoreMath.Multiply(MoreMath.Inverse(A), B);
-
-            // return new [] { answer[1, 0], answer[1, 1] };
+            // Note: Most textbooks recommend to solve Ax=B by inverting A and
+            // multiplying it with B. While that is mathematically sound, it's
+            // computationally innefficient. Gauss-Jordan method is
+            // computationally efficient for solving a system of linear
+            // equations.
 
             MoreMath.GaussJordanMethod(A, B);
 
