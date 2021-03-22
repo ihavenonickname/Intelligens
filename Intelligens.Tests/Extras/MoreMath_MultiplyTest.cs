@@ -3,7 +3,7 @@ using Xunit;
 
 namespace Intelligens.Tests.Extras
 {
-    public class MoreMathTest
+    public class MoreMath_MultiplyTest
     {
         [Fact]
         public void Multiply_ShouldWork_WithSquareMatrices1()
